@@ -2,42 +2,59 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Giphy Tool</title>
+	<title>Gify Tool</title>
 
 	<!-- jquery link -->
 	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+	<!-- Latest compiled and minified CSS Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<link href="https://fonts.googleapis.com/css?family=Fugaz+One|Lato" rel="stylesheet">
 
 	<!-- personal css link -->
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 </head>
 <body>
-	<header> 
-		<h1>Giphy Tool</h1>
-	</header>
-	<main>
-		<aside>
-			<section id="addArea">
-				<form id="buttonForm">
-			      <label for="buttonInput">Add an animal</label>
-			      <input type="text" id="buttonInput"><br>
+	<div class="flexContain">
+		<header> 
+			<h1>GIFY animals</h1>
+		</header>
+		<main class="container">
+			<div class="row">
+				<aside class="col-md-3 col-sm-12" id="marginBottom">
+					<div id="navArea">
+						<section id="buttonsArea"></section>
+						<section id="addArea">
+							<form id="buttonForm">
+						      <!-- <label for="buttonInput">Add an animal</label> -->
+						      <input type="text" id="buttonInput" placeholder="Enter an animal"><br>
 
-			      <!-- Button triggers new animal to be added to the buttonsArea -->
-			      <input id="addButton" type="submit" value="Add an animal">
-			    </form>
-			</section>
-			<section id="buttonsArea"></section>
-		</aside>
-		<section>
-			<h2>Button Name</h2>
-			<section id="gifArea"></section>
-		</section>
-	</main>
-	<footer>
-		<p>Jillian Flook, 2017</p>
-	</footer>
+						      <!-- Button triggers new animal to be added to the buttonsArea -->
+						      <input class="btn btn-info" id="addButton" type="submit" value="Add">
+						    </form>
+						</section>
+					</div>
+				</aside>
+				<section class="col-md-9 col-sm-12">
+					<div id="gifHolder">
+						
+						<section id="gifArea"></section>
+					</div>
+				</section>
+			</div>
+		</main>
+	</div>
+	<div class="flexFoot">
+		<footer>
+			<p>Jillian Flook, 2017</p>
+		</footer>
+	</div>
+		
 
-
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- personal js link -->
 <script type="text/javascript" src="assets/javascript/game.js"></script>

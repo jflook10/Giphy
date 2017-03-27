@@ -1,0 +1,104 @@
+
+body{
+	background-color: #D3DFE6;
+	margin: 0px;
+	font-family:'Lato', sans-serif;
+	min-height: 100%;
+	display: flex;
+  	flex-direction: column;
+}
+
+/*header*/
+header{
+	padding: 3%;
+}
+h1{
+	font-size: 70px;
+	font-family: 'Fugaz One', cursive;
+
+}
+
+
+
+/*main*/
+
+/*here for sticy footer*/
+.flexContain{
+	flex: 1;
+}
+
+main{
+	min-height: 100%;
+}
+
+/*left aside*/
+
+/*small screen hack*/
+#marginBottom{
+	margin-bottom: 35px; 
+}
+
+#navArea{
+	background-color: #708FA3;
+	border: 3px solid #486F88;
+}
+
+form{
+	padding: 3%;
+	margin: 1% 0%;
+}
+
+input{
+	padding: 1%;
+	margin: 1% 0%;
+}
+
+#buttonsArea{
+	padding: 1%;
+}
+
+button{
+	padding: 0px 20px;
+	margin: 8px 10px;
+}
+
+
+/*right section*/
+
+/*gif and ratings container*/
+.item{
+	display: inline-block;
+	margin: 15px;
+}
+
+/*h2 text above gif*/
+#animalText{
+	font-family: 'Fugaz One', cursive;
+	font-size: 27px;
+	padding: 0% 3%;
+}
+
+#gifHolder{
+	min-height: 233px;
+	background-color: #708FA3;
+	border: 3px solid #486F88;
+	padding: 0px 25px;
+}
+
+#gifArea{
+	padding: 30px 15px;
+	height: 100%;
+}
+
+
+
+/*footer*/
+#flexFoot {
+	display: flex;
+}
+footer{
+	margin-top: 30px;
+	font-size: 12px;
+	text-align: center;
+	align-self: flex-end;
+}
