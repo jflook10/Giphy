@@ -1,9 +1,18 @@
 
 var animals = ["hippo", "squirrel", "cow", "lemur", "panda", "puppy", "kitten", "goat", "hamster", "pig"];
 
-var animalName = "pets";
+var animalName;
 
 $("document").ready(function(){
+
+ // Output all of the new information into the relevant HTML sections
+ if(localStorage.key("animal")){
+ 	animalName = localStorage.getItem("animal");
+ 	console.log("IT WORKED!");
+ } else{
+ 	animalName = "pets"
+ 	console.log("PETS")
+ }
 
 //dynamically adds buttons from the animals array to the page
 function renderButtons(){
@@ -49,6 +58,10 @@ $("body").on("click", ".animalBtn", function() {
     $("#gifArea").empty();
 
     loadGifs();
+
+    //calls last searched animal on local storage 
+	localStorage.setItem("animal", animalName);
+	console.log("local storage")
 }); //end of button on-click 
 
 function loadGifs(){
@@ -97,6 +110,7 @@ $("#gifArea").on("mouseleave", ".animalGif", function(){
 	$(this).attr("src", $(this).attr("data-still"));
 });
 
+      
 
 
 renderButtons();

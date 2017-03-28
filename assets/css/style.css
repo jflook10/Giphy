@@ -21,8 +21,12 @@ h1{
 	color: #3DCCE0;
 	font-family: 'Fugaz One', cursive;
 	padding-bottom: 0px;
+	display: inline-block;
 }
 
+#tagline{
+	display: inline-block;
+	color: #ffa267;
 }
 
 
@@ -139,4 +143,5 @@ footer{
 	font-size: 12px;
 	text-align: center;
 	align-self: flex-end;
+	color: #3DCCE0;
 }
