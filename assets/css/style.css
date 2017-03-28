@@ -1,6 +1,6 @@
 
 body{
-	background-color: #D3DFE6;
+	background-color: #fff;
 	margin: 0px;
 	font-family:'Lato', sans-serif;
 	min-height: 100%;
@@ -10,11 +10,18 @@ body{
 
 /*header*/
 header{
-	padding: 3%;
+	padding: 0.5% 3%;
+	padding-bottom: 0px;
+	margin-bottom: 25px;
+	background-color: #FFC691;
+	border-bottom: 3px solid #FFB067;
 }
 h1{
-	font-size: 70px;
+	font-size: 65px;
+	color: #3DCCE0;
 	font-family: 'Fugaz One', cursive;
+	padding-bottom: 0px;
+}
 
 }
 
@@ -31,6 +38,11 @@ main{
 	min-height: 100%;
 }
 
+/*for the h2 elements*/
+.centered{
+	text-align: center;
+}
+
 /*left aside*/
 
 /*small screen hack*/
@@ -39,8 +51,15 @@ main{
 }
 
 #navArea{
-	background-color: #708FA3;
-	border: 3px solid #486F88;
+	background-color: #8EE8F5;
+	border: 3px solid #3DCCE0;
+}
+
+h3{
+	font-family: 'Fugaz One', cursive;
+	font-size: 27px;
+	padding: 0% 3%;
+	color: #FFB067;
 }
 
 form{
@@ -62,6 +81,19 @@ button{
 	margin: 8px 10px;
 }
 
+.blueBtn{
+	color: #1AB6CC;
+	border: 1px solid #3DCCE0;
+	font-size: 16px;
+}
+
+.blueBtn:hover{
+	background: #FDFFC7;
+	border: 1px solid #FBFF91;
+	color: #1AB6CC;
+	font-size: 16px;
+
+}
 
 /*right section*/
 
@@ -72,22 +104,28 @@ button{
 }
 
 /*h2 text above gif*/
-#animalText{
+h2{
 	font-family: 'Fugaz One', cursive;
-	font-size: 27px;
+	font-size: 50px;
 	padding: 0% 3%;
+	color: #FFB067;
 }
 
 #gifHolder{
 	min-height: 233px;
-	background-color: #708FA3;
-	border: 3px solid #486F88;
+	background-color: #8EE8F5;;
+	border: 3px solid #3DCCE0;
 	padding: 0px 25px;
 }
 
 #gifArea{
-	padding: 30px 15px;
+	padding: 0px  15px 30px 15px;
 	height: 100%;
+}
+
+#gifArea p{
+	color: #fff;
+	font-size: 16px;
 }
 
 

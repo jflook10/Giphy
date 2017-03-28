@@ -1,6 +1,8 @@
 
 var animals = ["hippo", "squirrel", "cow", "lemur", "panda", "puppy", "kitten", "goat", "hamster", "pig"];
 
+var animalName = "pets";
+
 $("document").ready(function(){
 
 //dynamically adds buttons from the animals array to the page
@@ -11,7 +13,7 @@ function renderButtons(){
 
 	//loop through array to create buttons
 	for (i=0; i < animals.length; i++){
-		var button = $("<button>").addClass("btn btn-default animalBtn").attr("data-name", animals[i]).text(animals[i]);
+		var button = $("<button>").addClass("btn btn-default animalBtn blueBtn").attr("data-name", animals[i]).text(animals[i]);
 		$("#buttonsArea").append(button);
 	}
 
@@ -26,6 +28,9 @@ $("#addButton").on("click", function(event){
 	//catches user input from form and adds it to the animals array
 	var userInput = $("#buttonInput").val().trim().toLowerCase();
 	
+	// empty the user text area
+	$("#buttonInput").val("");
+	
 	//checking for duplicate buttons
 	if(animals.indexOf(userInput) === -1){
 		animals.push(userInput);
@@ -37,15 +42,20 @@ $("#addButton").on("click", function(event){
 // onclick of button, empty buttonsArea, add 10 videos of topic. 
 $("body").on("click", ".animalBtn", function() {
     //gets name from button to include in the queryURL
-    var animalName = $(this).attr("data-name");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
-      animalName + "&api_key=dc6zaTOxFJmzC&limit=10";
-
+    animalName = $(this).attr("data-name");
+    
     $("#animalText").empty().text(animalName);
 
     $("#gifArea").empty();
 
-    $.ajax({
+    loadGifs();
+}); //end of button on-click 
+
+function loadGifs(){
+	var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+      animalName + "&api_key=dc6zaTOxFJmzC&limit=10";
+
+	    $.ajax({
         url: queryURL,
         method: "GET"
      })
@@ -66,13 +76,18 @@ $("body").on("click", ".animalBtn", function() {
 	           	               "data-animate": results[i].images.fixed_height.url,
 	           	               "data-state": "still",
 	           	           	   "class": "animalGif"});
-	           gifDiv.prepend(p, animalImg);
+	           gifDiv.prepend(animalImg, p);
 
-	           $("#gifArea").prepend(gifDiv);
+	           $("#gifArea").append(gifDiv);
        	    };
         }
+        // adds the name of the selected animal/button to the div area
+    var addDiv = $("<div class='centered'>")
+    var addHeader = $("<h2 id='animalHeader'>").text(animalName);
+    var selectedAnimal= addDiv.append(addHeader);
+    $("#gifArea").prepend(selectedAnimal); 
     });
-}); //end of button on-click 
+} //end of loadGifs function
 
 $("#gifArea").on("mouseenter", ".animalGif", function(){
 	$(this).attr("src", $(this).attr("data-animate"));
@@ -85,6 +100,7 @@ $("#gifArea").on("mouseleave", ".animalGif", function(){
 
 
 renderButtons();
+loadGifs();
 
 
 });// end of document ready
