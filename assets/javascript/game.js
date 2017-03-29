@@ -8,6 +8,7 @@ $("document").ready(function(){
  // Output all of the new information into the relevant HTML sections
  if(localStorage.key("animal")){
  	animalName = localStorage.getItem("animal");
+ 	console.log(animalName);
  	console.log("IT WORKED!");
  } else{
  	animalName = "pets"
@@ -22,7 +23,7 @@ function renderButtons(){
 
 	//loop through array to create buttons
 	for (i=0; i < animals.length; i++){
-		var button = $("<button>").addClass("btn btn-default animalBtn blueBtn").attr("data-name", animals[i]).text(animals[i]);
+		var button = $("<button>").addClass("btn animalBtn blueBtn").attr("data-name", animals[i]).text(animals[i]);
 		$("#buttonsArea").append(button);
 	}
 
@@ -47,6 +48,25 @@ $("#addButton").on("click", function(event){
 	}else{
 		return false};
 })
+
+// not working!
+$("#searchButton").on("click", function(event){
+	event.preventDefault();
+
+	animalName = $("#searchInput").val().trim().toLowerCase();
+	console.log("New animal name: " + animalName);
+
+	$("#animalText").empty().text(animalName);
+
+    $("#gifArea").empty();
+
+    loadGifs();
+
+    //calls last searched animal on local storage 
+	localStorage.setItem("animal", animalName);
+	console.log("local storage")
+});
+
 
 // onclick of button, empty buttonsArea, add 10 videos of topic. 
 $("body").on("click", ".animalBtn", function() {
@@ -74,6 +94,7 @@ function loadGifs(){
      })
     .done(function(response) {
         var results = response.data;
+        console.log(results);
         for (var i = 0; i < 10; i++) {
  	       var gifDiv = $("<div class='item'>");
 
@@ -94,7 +115,7 @@ function loadGifs(){
 	           $("#gifArea").append(gifDiv);
        	    };
         }
-        // adds the name of the selected animal/button to the div area
+    // adds the name of the selected animal/button to the div area
     var addDiv = $("<div class='centered'>")
     var addHeader = $("<h2 id='animalHeader'>").text(animalName);
     var selectedAnimal= addDiv.append(addHeader);

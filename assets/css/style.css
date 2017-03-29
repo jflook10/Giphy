@@ -10,7 +10,7 @@ body{
 
 /*header*/
 header{
-	padding: 0.5% 3%;
+	padding: 0.5% 0% 0.5% 3%;
 	padding-bottom: 0px;
 	margin-bottom: 25px;
 	background-color: #FFC691;
@@ -24,11 +24,25 @@ h1{
 	display: inline-block;
 }
 
+h3{
+	font-family: 'Fugaz One', cursive;
+	font-size: 27px;
+	color: #FFB067;
+}
+
 #tagline{
 	display: inline-block;
 	color: #ffa267;
 }
 
+#searchForm{
+	padding-bottom: 0px;
+}
+
+#searchInput{
+	color: #1AB6CC;
+	margin-right: 15px;
+}
 
 
 /*main*/
@@ -59,11 +73,8 @@ main{
 	border: 3px solid #3DCCE0;
 }
 
-h3{
-	font-family: 'Fugaz One', cursive;
-	font-size: 27px;
+#buttonHeader{
 	padding: 0% 3%;
-	color: #FFB067;
 }
 
 form{
@@ -88,6 +99,7 @@ button{
 .blueBtn{
 	color: #1AB6CC;
 	border: 1px solid #3DCCE0;
+	background: #fff;
 	font-size: 16px;
 }
 
@@ -98,6 +110,31 @@ button{
 	font-size: 16px;
 
 }
+
+.blueBtn:focus{
+	color: #1AB6CC;
+	border: 2px solid #3DCCE0;
+	font-weight: bold;
+	background: #fff;
+}
+
+#buttonInput{
+	color: #1AB6CC;
+}
+
+
+/*media query focused on removing button on smaller size window*/
+@media only screen and (max-width: 768px) {
+    main{
+    	margin-left: 40px;
+    	margin-right: 40px;
+    }
+
+    aside{
+    	display: none;
+    }
+}
+
 
 /*right section*/
 

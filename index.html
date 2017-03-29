@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	
 	<title>Gify Tool</title>
 
 	<!-- jquery link -->
@@ -18,16 +20,26 @@
 </head>
 <body>
 	<div class="flexContain">
-		<header> 
-			<h1>GIFYmals</h1>
-			<h3 id="tagline">the best gifs from your favorite species</h3>
+		<header class="row">
+			<div class="col-md-9 col-sm-12">
+				<h1>GIFYmals</h1>
+				<h3 id="tagline">the best gifs from your favorite species</h3>
+			</div> 
+			<form class="col-md-3 col-sm-12" id="searchForm">
+				<!-- <label for="buttonInput">Add an animal</label> -->
+				<input type="text" id="searchInput" placeholder="search...">
+
+				<!-- Button triggers new animal to be added to the buttonsArea -->
+				<input class="btn btn-info" id="searchButton" type="submit" value="search">
+			</form>
+
 		</header>
 		<main class="container">
 			<div class="row">
 				<aside class="col-md-3 col-sm-12" id="marginBottom">
 					<div id="navArea">
 						<section class="centered">
-							<h3>Select an Animal</h3>
+							<h3 id="#buttonHeader">Select an Animal</h3>
 						</section>
 						<section id="buttonsArea"></section>
 						<section id="addArea">
